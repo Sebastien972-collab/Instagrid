@@ -8,139 +8,94 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var imageField: UIView! 
-
-    @IBOutlet weak var pickPhotoLayout1: UIButton!
-    @IBOutlet weak var pickPhotoRightTop: UIButton!
-    @IBOutlet weak var pickPhotoRigtBottom: UIButton!
-    @IBOutlet weak var pickPhotoLefttTop: UIButton!
-    @IBOutlet weak var pickPhotoLefttBottom: UIButton!
-    @IBOutlet weak var pickPhotoLayout2: UIButton!
-   
     
-    @IBOutlet weak var imageViewLayout1: UIImageView!
-    @IBOutlet weak var imageViewLayoutRightBottom: UIImageView!
-    @IBOutlet weak var imageViewLayoutLeftBottom: UIImageView!
-    @IBOutlet weak var imageViewRightTop: UIImageView!
-    @IBOutlet weak var imageViewLeftTop: UIImageView!
-    @IBOutlet weak var imageViewLayout2: UIImageView!
-    var ImageView: UIImageView!
-  
+    //MARK: - Outlet
+    @IBOutlet weak private var imageField: UIView!
+    @IBOutlet weak private var pickPhotoRightTop: UIButton!
+    @IBOutlet weak private var pickPhotoRightBottom: UIButton!
+    @IBOutlet weak private var pickPhotoLeftBottom: UIButton!
+    @IBOutlet weak private var pickPhotoLeftTop: UIButton!
+    
+    @IBOutlet weak private var buttonLayout1: UIButton!
+    @IBOutlet weak private var buttonLayout2: UIButton!
+    @IBOutlet weak private var buttonLayout3: UIButton!
+    private var ImageView: UIButton!
+    private var imageBackground: UIView!
+    private var isShared = false
+    @IBOutlet weak private var swipeToShareLabel: UILabel!
+    @IBOutlet weak private var arrowUpLabel: UIImageView!
+    @IBOutlet weak private var instagridLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        prepareUserInterface()
+    }
+    
+    //MARK:-Button Layout
+    @IBAction private func buttonLayout1(_ sender: Any) {
+        selectedButton(button: buttonLayout1)
+        
         resetLayout()
-        imageViewRightTop.isHidden = false
-        imageViewLeftTop.isHidden = false
-        imageViewLayout2.isHidden = false
-        pickPhotoRightTop.isHidden = false
-        pickPhotoLefttTop.isHidden = false
-        pickPhotoLayout2.isHidden = false
-        let panGestureRecogmizer = UIPanGestureRecognizer(target: self, action: #selector(swipeUpForPartage(_:)))
-        imageField.addGestureRecognizer(panGestureRecogmizer)
-        
-        
-    }
-
-    @IBAction func pickPhotoImageViewLayout1(_ sender: Any) {
-        addPhoto(Button: pickPhotoLayout1,ImageViewLayout: imageViewLayout1)
-        
-    }
-    @IBAction func pickPhotoImageViewLayout1RightBottom(_ sender: Any) {
-        addPhoto(Button: pickPhotoRigtBottom,ImageViewLayout: imageViewLayoutRightBottom)
+        pickPhotoLeftTop.isHidden = true
     }
     
-    @IBAction func pickPhotoImageViewLayout1LeftBottom(_ sender: Any) {
-        addPhoto(Button: pickPhotoLefttBottom ,ImageViewLayout: imageViewLayoutLeftBottom)
-    }
-    
-    
-    @IBAction func buttonLayout1(_ sender: Any) {
+    @IBAction private func buttonLayout2(_ sender: Any) {
+        selectedButton(button: buttonLayout2)
+        
         resetLayout()
-        imageViewLayout1.isHidden = false
-        imageViewLayoutRightBottom.isHidden = false
-        imageViewLayoutLeftBottom.isHidden = false
-        pickPhotoLayout1.isHidden = false
-        pickPhotoRigtBottom.isHidden = false
-        pickPhotoLefttBottom.isHidden = false
+        pickPhotoLeftBottom.isHidden = true
     }
-    
-    @IBAction func buttonLayout2(_ sender: Any) {
-       resetLayout()
-        imageViewRightTop.isHidden = false
-        imageViewLeftTop.isHidden = false
-        imageViewLayout2.isHidden = false
-        imageViewRightTop.isHidden = false
-        pickPhotoLayout2.isHidden = false
-        pickPhotoRightTop.isHidden = false
-        pickPhotoLefttTop.isHidden = false
-       
-      
+    @IBAction private func buttonLayout3(_ sender: Any) {
         
-    }
-    @IBAction func buttonLayout3(_ sender: Any) {
+        selectedButton(button: buttonLayout3)
         resetLayout()
         
-        imageViewLayoutRightBottom.isHidden = false
-        imageViewLayoutLeftBottom.isHidden = false
-        imageViewRightTop.isHidden = false
-        imageViewLeftTop.isHidden = false
-        pickPhotoRightTop.isHidden = false
-        pickPhotoRigtBottom.isHidden = false
-        pickPhotoLefttTop.isHidden = false
-        pickPhotoLefttBottom.isHidden = false
-      
-       
-    }
-    
-    @IBAction func pickPhotoRightTop(_ sender: Any) {
-        addPhoto(Button: pickPhotoRightTop, ImageViewLayout: imageViewRightTop)
-       
-    }
-    
-    @IBAction func pickPhotoLeftTop(_ sender: Any) {
-        addPhoto(Button: pickPhotoLefttTop, ImageViewLayout: imageViewLeftTop)
-    }
-    
-    @IBAction func pickPhotoLayout2(_ sender: Any) {
-        addPhoto(Button: pickPhotoLayout2, ImageViewLayout: imageViewLayout2)
-    }
-    
-    func resetLayout() {
-        imageViewLayout1.isHidden = true
-        imageViewLayoutRightBottom.isHidden = true
-        imageViewLayoutLeftBottom.isHidden = true
-        imageViewRightTop.isHidden = true
-        imageViewLeftTop.isHidden = true
-        imageViewLayout2.isHidden = true
-        pickPhotoLayout1.isHidden = true
-        pickPhotoRightTop.isHidden = true
-        pickPhotoRigtBottom.isHidden = true
-        pickPhotoLefttTop.isHidden = true
-        pickPhotoLefttBottom.isHidden = true
-        pickPhotoLayout2.isHidden = true
-      
-     
         
     }
+    //MARK:- Button Photo
+    @IBAction private func addPhotoRightTop(_ sender: Any) {
+        addPhoto(button: pickPhotoRightTop)
+    }
+    @IBAction private func addPhotoLeftTop(_ sender: Any) {
+        addPhoto(button: pickPhotoLeftTop)
+    }
+    @IBAction private func addPhotoLeftBottom(_ sender: Any) {
+        addPhoto(button: pickPhotoLeftBottom)
+    }
+    @IBAction private func addPhotoRightBottom(_ sender: Any) {
+        addPhoto(button: pickPhotoRightBottom)
+    }
     
-    func addPhoto(Button : UIButton, ImageViewLayout : UIImageView) {
-        ImageView = ImageViewLayout
+    private func resetButtonLayout() {
+        buttonLayout1.setImage(nil, for: .normal)
+        buttonLayout2.setImage(nil, for: .normal)
+        buttonLayout3.setImage(nil, for: .normal)
+    }
+    //MARK:- Selected Button
+    private func selectedButton(button : UIButton) {
+        resetButtonLayout()
+        let image = #imageLiteral(resourceName: "Selected")
+        button.setImage(image, for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+    }
+    //MARK:- Add Photo
+   private func addPhoto(button : UIButton) {
+        ImageView = button
         let photoSourceRequestController = UIAlertController(title: "", message: "Choisissez une photo ", preferredStyle: .actionSheet)
         
         let cameraAction = UIAlertAction(title: "Appareil photo", style: .default) {(action ) in
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.allowsEditing = false
+                imagePicker.allowsEditing = true
                 imagePicker.sourceType = .camera
                 self.present(imagePicker, animated: true, completion: nil)
-                
-                
-                    Button.isHidden = true
-                
             }
         }
         let photoLibraryAction = UIAlertAction(title: "Galerie Photo", style: .default) {(action) in
@@ -158,45 +113,111 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         photoSourceRequestController.addAction(photoLibraryAction)
         photoSourceRequestController.addAction(cancelAction)
         present(photoSourceRequestController, animated: true, completion: nil)
-      
+        
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        ImageView.image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage)
+     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imagePick = (info[UIImagePickerController.InfoKey.editedImage] as? UIImage){
+        ImageView.setImage(imagePick, for: .normal)
         ImageView.contentMode = .scaleAspectFill
-        ImageView.clipsToBounds = true
-            dismiss(animated: true, completion: nil)
-            }
-    @objc func swipeUpForPartage(_ sender: UIPanGestureRecognizer) {
-        switch sender.state {
-        case .began, .changed:
-            transformImageField(sender)
-        case .ended, .cancelled:
+        ImageView.clipsToBounds = false
+        dismiss(animated: true, completion: nil)
+        }
+    }
+    //MARK:- Transform Image
+    private func transformImageField(portrait : Bool){
+        
+        let screenHeight = UIScreen.main.bounds.height
+        switch portrait {
+        case true:
+            UIView.animate(withDuration: 3, animations: {
+                self.swipeToShareLabel.shake()
+                self.imageField.transform = CGAffineTransform(translationX: 0, y: screenHeight)
+            }, completion: { (nil) in
+            })
             shareImageFiels()
-        default:
-            break
+        case false:
+            UIView.animate(withDuration: 3, animations: {
+                self.imageField.transform = CGAffineTransform(translationX: screenHeight, y: 0)
+            }, completion: { (isShared ) in
+           })
+
+            shareImageFiels()
             
         }
-      
-        
+    }
+    //MARK:-Swipe To Share Image
+    @objc  private func swipe(sender : UISwipeGestureRecognizer) {
+        let orientation = UIDevice.current.orientation
+        switch sender.direction {
+        case .left:
+            if orientation.isLandscape && orientation.isFlat {
+                transformImageField(portrait: false)
+            }
+        case.up:
+            if orientation.isPortrait{
+                transformImageField(portrait: true)
+            }
+        default:
+            
+            break
+        }
         
     }
-    private func transformImageField(_ gesture : UIPanGestureRecognizer){
-        let translation = gesture.translation(in: imageField)
-        imageField.transform = CGAffineTransform.init(translationX: 0, y: translation.y)
-        
-    }
-    func shareImageFiels() {
+    //MARK:- Share Image
+    private func shareImageFiels() {
         let renderer = UIGraphicsImageRenderer(size: imageField.bounds.size)
         let image = renderer.image { ctx in
             imageField.drawHierarchy(in: imageField.bounds, afterScreenUpdates: false)
         }
         let vc = UIActivityViewController(activityItems: [image], applicationActivities: nil )
-        imageField.isHidden = true
         present(vc, animated: true, completion: nil)
-        imageField.isHidden = false
         imageField.transform = .identity
         
     }
+    //MARK:- Reset Layout
+    private func resetLayout() {
+        pickPhotoRightTop.isHidden = false
+        pickPhotoRightBottom.isHidden = false
+        pickPhotoLeftBottom.isHidden = false
+        pickPhotoLeftTop.isHidden = false
+    }
+    private func prepareLabel() {
+        guard let customFontDelmMedium = UIFont(name: "Delm-Medium", size: UIFont.labelFontSize) else {
+            fatalError("""
+                Failed to load the "CustomFont-Light" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        guard let customThirstySoftRegularFpnt = UIFont(name: "ThirstySoftRegular", size: UIFont.labelFontSize) else {
+            fatalError("""
+                Failed to load the "CustomFont-Light" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        
+        swipeToShareLabel.font = UIFontMetrics.default.scaledFont(for: customFontDelmMedium)
+        swipeToShareLabel.adjustsFontForContentSizeCategory = true
+        instagridLabel.font = UIFontMetrics.default.scaledFont(for: customThirstySoftRegularFpnt)
+        instagridLabel.adjustsFontForContentSizeCategory = true
+        instagridLabel.textColor = .white
+    }
+    private func prepareUserInterface() {
+        resetLayout()
+        pickPhotoLeftBottom.isHidden = true
+        selectedButton(button: buttonLayout2)
+        let swipeUp = UISwipeGestureRecognizer()
+        swipeUp.direction = .up
+        let swipeLeft = UISwipeGestureRecognizer()
+        swipeLeft.direction = .left
+        imageField.addGestureRecognizer(swipeUp)
+        imageField.addGestureRecognizer(swipeLeft)
+        swipeUp.addTarget(self, action: #selector(swipe))
+        swipeLeft.addTarget(self, action: #selector(swipe))
+        prepareLabel()
+    }
+   
 }
-    
+
 

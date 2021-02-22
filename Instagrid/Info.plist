@@ -66,5 +66,10 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow acces for pick a photo</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Delm-Medium.otf</string>
+		<string>ThirstySoftRegular.otf</string>
+	</array>
 </dict>
 </plist>
