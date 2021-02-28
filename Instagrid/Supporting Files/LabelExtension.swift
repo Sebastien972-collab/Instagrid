@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel{
+extension UIView{
     func shake() {
         let shake = CABasicAnimation(keyPath: "position")
         shake.duration = 0.1
