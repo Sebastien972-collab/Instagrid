@@ -16,6 +16,7 @@
 		8B67994A25AF4B6000B20C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994825AF4B6000B20C53 /* Main.storyboard */; };
 		8B67994C25AF4B6500B20C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994B25AF4B6500B20C53 /* Assets.xcassets */; };
 		8B67994F25AF4B6500B20C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */; };
+		8BFAB74A25EFC32900427D32 /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFAB74925EFC32800427D32 /* SwapButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8B67994B25AF4B6500B20C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B67994E25AF4B6500B20C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B67995025AF4B6500B20C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BFAB74925EFC32800427D32 /* SwapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		8B55F21025B6EE44008EB080 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8BFAB74925EFC32800427D32 /* SwapButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -53,6 +56,7 @@
 		8B55F21125B6EE56008EB080 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */,
 				8B67994825AF4B6000B20C53 /* Main.storyboard */,
 			);
 			path = View;
@@ -71,7 +75,6 @@
 			children = (
 				8B5C04DF25DE074300D5427A /* Delm-Medium.otf */,
 				8B5C04E525DE0D8900D5427A /* ThirstySoftRegular.otf */,
-				8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */,
 				8B67994225AF4B6000B20C53 /* AppDelegate.swift */,
 				8B67994425AF4B6000B20C53 /* SceneDelegate.swift */,
 				8B67994B25AF4B6500B20C53 /* Assets.xcassets */,
@@ -99,7 +102,6 @@
 		8B67994125AF4B6000B20C53 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				8B76463025BB49E000C38831 /* Source File */,
 				8B55F21525B6EE95008EB080 /* Supporting Files */,
 				8B55F21325B6EE77008EB080 /* Controler */,
 				8B55F21125B6EE56008EB080 /* View */,
@@ -107,13 +109,6 @@
 				8B67995025AF4B6500B20C53 /* Info.plist */,
 			);
 			path = Instagrid;
-			sourceTree = "<group>";
-		};
-		8B76463025BB49E000C38831 /* Source File */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Source File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +186,7 @@
 				8B5C04EB25DEBF7800D5427A /* LabelExtension.swift in Sources */,
 				8B67994725AF4B6000B20C53 /* ViewController.swift in Sources */,
 				8B67994325AF4B6000B20C53 /* AppDelegate.swift in Sources */,
+				8BFAB74A25EFC32900427D32 /* SwapButton.swift in Sources */,
 				8B67994525AF4B6000B20C53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
