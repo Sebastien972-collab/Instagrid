@@ -32,11 +32,11 @@
                                 <rect key="frame" x="753" y="63" width="110" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-5i-N72">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-5i-N72">
                                 <rect key="frame" x="64" y="636" width="300" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6T-Ti-K9e">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80.666666666666671" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <state key="selected" image="Selected" backgroundImage="Layout 1"/>
                                         <connections>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4b-dX-G0B">
-                                        <rect key="frame" x="102.66666666666666" y="0.0" width="94.666666666666657" height="80"/>
+                                        <rect key="frame" x="109.66666666666666" y="0.0" width="80.666666666666657" height="80"/>
                                         <state key="normal" backgroundImage="Layout 2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tv-rZ-0hK">
-                                        <rect key="frame" x="205.33333333333331" y="0.0" width="94.666666666666686" height="80"/>
+                                        <rect key="frame" x="219.33333333333329" y="0.0" width="80.666666666666657" height="80"/>
                                         <state key="normal" backgroundImage="Layout 3">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>

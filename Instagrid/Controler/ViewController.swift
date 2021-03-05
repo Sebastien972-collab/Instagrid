@@ -37,7 +37,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction private func buttonLayout1(_ sender: UIButton) {
         tappedLayout(sender: sender, layout: .layout1)
     }
-    
     @IBAction private func buttonLayout2(_ sender: UIButton) {
         tappedLayout(sender: sender, layout: .layout2)
     }
@@ -91,15 +90,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         present(vc, animated: true, completion: nil)
     }
-    private func alertUser(title : String ,message : String)-> UIAlertController  {
-        let alertVc = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVc.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-            UIView.animate(withDuration: 3) {
-                self.imageField.transform = .identity
-            }
-        }))
-        return alertVc
-    }
     //MARK:- Function and user interface preparation
     //MARK:- Prepare label
     ///This function allows you to retrieve the fonts and assignments to labels
@@ -128,6 +118,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK:- Prepare user interface
     ///This function is used to display the start screen
     private func prepareUserInterface() {
+        
         tappedLayout(sender: buttonLayout2, layout: .layout2)
         let swipeUp = UISwipeGestureRecognizer()
         swipeUp.direction = .up
@@ -194,10 +185,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         resetButtonLayout()
+        print(newSwape == nil )
         guard newSwape != nil else {
             newSwape = prepareSwap(sender: sender, layout: layout)
+            newSwape?.tappedOnButtonLayout1and2(sender: sender, layout: layout)
             return
         }
         newSwape?.tappedOnButtonLayout1and2(sender: sender, layout: layout)
+    }
+    private func alertUser(title : String ,message : String)-> UIAlertController  {
+        let alertVc = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVc.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            UIView.animate(withDuration: 3) {
+                self.imageField.transform = .identity
+            }
+        }))
+        return alertVc
     }
 }

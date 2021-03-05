@@ -20,7 +20,7 @@ class SwapButton {
    private let buttonLeftBottom : UIButton
    private let buttonRightTop: UIButton
    private let buttonRightBottom : UIButton
-    private var layout : Layout{
+    private var layout : Layout = .layout1{
         didSet{
             print("Old value est \(oldValue) et la nouvelle  value est \(layout)")
             swapButton(oldLayout: oldValue, newLayout: layout)
