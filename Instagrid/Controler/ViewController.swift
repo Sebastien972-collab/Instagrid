@@ -22,12 +22,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak private var instagridLabel: UILabel!
     @IBOutlet weak private var arrowLeftView: UIImageView!
     @IBOutlet weak private var swipeLeftToShareLabel: UILabel!
-    
     private var imageViewButton: UIButton!
-    private var savedImageRightTop : UIImage?
-    private var savedImageRightBottom : UIImage?
     private var newSwape : SwapButton?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         addPhoto(button: sender)
     }
     //MARK:- Transform Image
-    ///This function moves the field
+    ///This function moves the image field
     private func transformImageField(landScape : Bool){
         let transform = landScape ? CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0) : CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
         let labelToShake : UILabel = landScape ? swipeLeftToShareLabel : swipeToShareLabel
@@ -62,13 +58,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK:- Swipe To Share Image
     ///This function allows you to select the movement according to the orientation
     @objc private func swipe(sender : UISwipeGestureRecognizer) {
+        /// This variable solves the problem that the system does not detect the orientation of the screen without movement beforehand
+        let positionPortrait : Bool = UIScreen.main.bounds.height > UIScreen.main.bounds.width
         switch sender.direction {
         case .left:
-            if UIDevice.current.orientation.isLandscape {
+            if UIDevice.current.orientation.isLandscape || !positionPortrait{
                 transformImageField(landScape: true)
             }
         default:
-            let positionPortrait : Bool = UIScreen.main.bounds.height > UIScreen.main.bounds.width
             if positionPortrait {
                 transformImageField(landScape: false)
             }
@@ -87,10 +84,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         vc.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             let alertUser = completed ? self.alertUser(title: "Sharing is a success", message: "Your action has been completed") : self.alertUser(title: "Sharing was not successful", message: "Your action failed or was canceled")
             self.present(alertUser, animated: true, completion: nil)
+            if completed {
+                self.newSwape?.resetAllButton()
+            }
         }
         present(vc, animated: true, completion: nil)
     }
-    //MARK:- Function and user interface preparation
+    //MARK:- Functions and user interface preparation
     //MARK:- Prepare label
     ///This function allows you to retrieve the fonts and assignments to labels
     private func prepareLabel() {
@@ -116,9 +116,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         swipeLeftToShareLabel.font = UIFontMetrics.default.scaledFont(for: customFontDelmMedium)
     }
     //MARK:- Prepare user interface
-    ///This function is used to display the start screen
+    ///This function is used to display the start screen and add swipe recognition
     private func prepareUserInterface() {
-        
         tappedLayout(sender: buttonLayout2, layout: .layout2)
         let swipeUp = UISwipeGestureRecognizer()
         swipeUp.direction = .up
@@ -129,14 +128,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         swipeUp.addTarget(self, action: #selector(swipe))
         swipeLeft.addTarget(self, action: #selector(swipe))
         prepareLabel()
-    }
-    //MARK:- Reset all button
-    ///This function returns the images of the buttons to their defaults.
-    private func resetAllButton() {
-        pickPhotoRightTopButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
-        pickPhotoRightBottomButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
-        pickPhotoLeftBottomButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
-        pickPhotoLeftTopButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
     }
     //MARK:- Add Photo
     /// This function allows you to recover the user's photo
@@ -155,44 +146,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let alertAction = UIAlertAction(title: messageAlert , style: .default) {(action ) in
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             imagePicker.sourceType = sourceType
             self.present(imagePicker, animated: true, completion: nil)
         }
         return alertAction
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let imagePick = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage){
+        if let imagePick = (info[UIImagePickerController.InfoKey.editedImage] as? UIImage){
             imageViewButton.setImage(imagePick, for: .normal)
             imageViewButton.contentMode = .scaleAspectFill
-            imageViewButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             imageViewButton.clipsToBounds = false
             dismiss(animated: true, completion: nil)
         }
     }
-    private func resetButtonLayout() {
-        buttonLayout1.isSelected = false
-        buttonLayout2.isSelected = false
-        buttonLayout3.isSelected = false
-    }
-    private func prepareSwap(sender : UIButton, layout : Layout) -> SwapButton {
-        let newSwap = SwapButton(sender: sender, buttonLeftTop: pickPhotoLeftTopButton, buttonLeftBottom: pickPhotoLeftBottomButton, buttonRightTop: pickPhotoRightTopButton, buttonRightBottom: pickPhotoRightBottomButton, layout: layout)
-        return newSwap
-    }
+    ///This function triggers the change of layout
     private func tappedLayout(sender : UIButton, layout : Layout) {
         guard !sender.isSelected else {
             present( alertUser(title: "Layout selected", message: "This layout already selected"), animated: true, completion: nil)
             return
         }
-        resetButtonLayout()
-        print(newSwape == nil )
         guard newSwape != nil else {
-            newSwape = prepareSwap(sender: sender, layout: layout)
+             newSwape = SwapButton(sender: sender, buttonLeftTop: pickPhotoLeftTopButton, buttonLeftBottom: pickPhotoLeftBottomButton, buttonRightTop: pickPhotoRightTopButton, buttonRightBottom: pickPhotoRightBottomButton, layout: layout)
             newSwape?.tappedOnButtonLayout1and2(sender: sender, layout: layout)
             return
         }
         newSwape?.tappedOnButtonLayout1and2(sender: sender, layout: layout)
     }
+    //This function allows create alert message 
     private func alertUser(title : String ,message : String)-> UIAlertController  {
         let alertVc = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVc.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in

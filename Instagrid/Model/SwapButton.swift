@@ -15,14 +15,14 @@ enum Layout {
 }
 class SwapButton {
     
-   private var sender : UIButton
-   private let buttonLeftTop : UIButton
-   private let buttonLeftBottom : UIButton
-   private let buttonRightTop: UIButton
-   private let buttonRightBottom : UIButton
+    private var sender : UIButton{
+        didSet{
+            oldValue.isSelected = false
+            selectedButton(button: sender)
+        }
+    }
     private var layout : Layout = .layout1{
         didSet{
-            print("Old value est \(oldValue) et la nouvelle  value est \(layout)")
             swapButton(oldLayout: oldValue, newLayout: layout)
             if layout == .layout1 {
                 buttonDisappearanceAnimation(button: buttonRightTop)
@@ -31,6 +31,10 @@ class SwapButton {
             }
         }
     }
+    private let buttonLeftTop : UIButton
+    private let buttonLeftBottom : UIButton
+    private let buttonRightTop: UIButton
+    private let buttonRightBottom : UIButton
     init(sender : UIButton, buttonLeftTop : UIButton, buttonLeftBottom : UIButton, buttonRightTop : UIButton,  buttonRightBottom : UIButton, layout : Layout ) {
         self.sender = sender
         self.buttonLeftTop = buttonLeftTop
@@ -41,11 +45,7 @@ class SwapButton {
     }
     func tappedOnButtonLayout1and2(sender : UIButton,layout : Layout) {
         resetLayout()
-        selectedButton(button: sender)
-        setLayout(layout)
-    }
-    
-    private func setLayout(_ layout : Layout)  {
+        self.sender = sender
         self.layout = layout
     }
     //MARK:- Selected Button
@@ -57,15 +57,9 @@ class SwapButton {
     }
     private func swapButton(oldLayout: Layout, newLayout: Layout){
         let layouts = [oldLayout, newLayout]
-        let layout2to1 : Bool = layouts[0] == .layout2 && layouts[1] == .layout1
-        let layout1to2 : Bool = layouts[0] == .layout1 && layouts[1] == .layout2
-        let layout3 : Bool = layouts[1] == .layout3
-        print(layouts[0])
-        print(layouts[1])
-        
-        print("2 a 1 est \(layout2to1)")
-        print(" 1 a 2 est \(layout1to2)")
-        
+        let layout2to1 : Bool = layouts.first == .layout2 && layouts.last == .layout1
+        let layout1to2 : Bool = layouts.first == .layout1 && layouts.last == .layout2
+        let layout3 : Bool = layouts.last == .layout3
         let saveRightTop = buttonRightTop.currentImage
         let saveRightBottom = buttonRightBottom.currentImage
         let saveLeftTop = buttonLeftTop.currentImage
@@ -96,13 +90,17 @@ class SwapButton {
         }
     }
     //MARK:- Reset Layout
-    ///This function returns all buttons to their initial display.
+    ///This function returns the images of the buttons to their defaults.
+     func resetAllButton() {
+        buttonRightTop.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
+        buttonRightBottom.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
+        buttonLeftBottom.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
+        buttonLeftTop.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
+    }
     private func resetLayout() {
         UIView.animate(withDuration: 0.5) {
             self.buttonRightTop.isHidden = false
             self.buttonRightBottom.isHidden = false
-            self.buttonLeftTop.isHidden = false
-            self.buttonLeftBottom.isHidden = false
         }
     }
 }
