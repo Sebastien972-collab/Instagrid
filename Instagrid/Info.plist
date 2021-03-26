@@ -71,5 +71,7 @@
 		<string>Delm-Medium.otf</string>
 		<string>ThirstySoftRegular.otf</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow acces to the photo library</string>
 </dict>
 </plist>
