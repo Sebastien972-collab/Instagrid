@@ -167,13 +167,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let alertAction = UIAlertAction(title: messageAlert , style: .default) {(action ) in
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
+            imagePicker.allowsEditing = true
             imagePicker.sourceType = sourceType
             self.present(imagePicker, animated: true, completion: nil)
         }
         return alertAction
     }
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let imagePick = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage){
+        if let imagePick = (info[UIImagePickerController.InfoKey.editedImage] as? UIImage){
             imageViewButton.imageView?.contentMode = .scaleAspectFill
             imageViewButton.setImage(imagePick, for: .normal)
             dismiss(animated: true, completion: nil)
@@ -230,7 +231,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private func swapButton(buttonDisappear : UIButton, buttonAppears: UIButton) {
         let imageSave = buttonDisappear.currentImage
         buttonAppears.setImage(imageSave, for: .normal)
-        buttonDisappear.setImage(#imageLiteral(resourceName: "Image"), for: .normal)
+        buttonDisappear.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
         buttonDisappearanceAnimation(button: buttonDisappear)
     }
 }
