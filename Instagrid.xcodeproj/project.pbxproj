@@ -43,13 +43,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B55F21025B6EE44008EB080 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8B55F21125B6EE56008EB080 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +95,6 @@
 				8B55F21525B6EE95008EB080 /* Supporting Files */,
 				8B55F21325B6EE77008EB080 /* Controler */,
 				8B55F21125B6EE56008EB080 /* View */,
-				8B55F21025B6EE44008EB080 /* Model */,
 				8B67995025AF4B6500B20C53 /* Info.plist */,
 			);
 			path = Instagrid;
@@ -334,7 +326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9TXP3LGTK;
 				INFOPLIST_FILE = Instagrid/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9TXP3LGTK;
 				INFOPLIST_FILE = Instagrid/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

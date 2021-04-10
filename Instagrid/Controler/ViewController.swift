@@ -27,36 +27,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         case layout2
         case layout3
     }
+    var images : [UIImage] = []
     private var layout : Layout = .layout2 {
+        willSet{
+            images = recupImage(layout: layout)
+        }
         didSet{
             resetLayout()
-            if layout == .layout1 {
-                swapButton(buttonDisappear: pickPhotoRightTopButton, buttonAppears: pickPhotoRightBottomButton)
-            }else if layout == .layout2 {
-                swapButton(buttonDisappear: pickPhotoRightBottomButton, buttonAppears: pickPhotoRightTopButton)
-            }
+            swapToLayout(layout: layout, images: images)
+            images.removeAll()
         }
     }
+    private var imageSave : UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUserInterface()
-        
-        
     }
     //MARK:- Button Layout
-    @IBAction private func buttonLayout1(_ sender: UIButton) {
-        tappedLayout(sender: sender, newLayout: .layout1)
-    }
-    @IBAction private func buttonLayout2(_ sender: UIButton) {
-        tappedLayout(sender: sender, newLayout: .layout2)
-    }
-    @IBAction private func buttonLayout3(_ sender: UIButton) {
-        tappedLayout(sender: sender, newLayout: .layout3)
+    @IBAction private func buttonLayout(_ sender: UIButton) {
+        if sender == buttonLayout1 {
+            tappedLayout(sender: sender, newLayout: .layout1)
+        }else if sender == buttonLayout2 {
+            tappedLayout(sender: sender, newLayout: .layout2)
+        }else if sender == buttonLayout3 {
+            tappedLayout(sender: sender, newLayout: .layout3)
+        }
     }
     //MARK:- Buttons Photo
     @IBAction func tappedAddPhoto(_ sender: UIButton) {
         addPhoto(button: sender)
-        
     }
     //MARK:- Transform Image
     ///This function moves the image field
@@ -167,14 +166,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let alertAction = UIAlertAction(title: messageAlert , style: .default) {(action ) in
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.allowsEditing = true
             imagePicker.sourceType = sourceType
             self.present(imagePicker, animated: true, completion: nil)
         }
         return alertAction
     }
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let imagePick = (info[UIImagePickerController.InfoKey.editedImage] as? UIImage){
+        if let imagePick = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage){
             imageViewButton.imageView?.contentMode = .scaleAspectFill
             imageViewButton.setImage(imagePick, for: .normal)
             dismiss(animated: true, completion: nil)
@@ -190,6 +188,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         resetButtonLayout()
         selectedButton(button: sender)
     }
+    private func resetButtonLayout() {
+        buttonLayout1.isSelected = false
+        buttonLayout2.isSelected = false
+        buttonLayout3.isSelected = false
+    }
+    //This function allows you to switch the button to selected mode
+    private func selectedButton(button : UIButton) {
+        button.isSelected = true
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
     //This function allows create alert message 
     private func alertUser(title : String ,message : String)-> UIAlertController  {
         let alertVc = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -200,12 +211,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }))
         return alertVc
     }
-    private func selectedButton(button : UIButton) {
-        button.isSelected = true
-        button.contentVerticalAlignment = .fill
-        button.contentHorizontalAlignment = .fill
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
+    
+    //Removes the button and displays an animation
     private func buttonDisappearanceAnimation(button : UIButton) {
         UIView.animate(withDuration: 0.5) {
             button.isHidden = true
@@ -216,22 +223,65 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickPhotoRightBottomButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
         pickPhotoLeftBottomButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
         pickPhotoLeftTopButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
-   }
+    }
     private func resetLayout() {
         UIView.animate(withDuration: 0.5) {
             self.pickPhotoRightTopButton.isHidden = false
             self.pickPhotoRightBottomButton.isHidden = false
         }
     }
-    private func resetButtonLayout() {
-        buttonLayout1.isSelected = false
-        buttonLayout2.isSelected = false
-        buttonLayout3.isSelected = false
-    }
     private func swapButton(buttonDisappear : UIButton, buttonAppears: UIButton) {
-        let imageSave = buttonDisappear.currentImage
-        buttonAppears.setImage(imageSave, for: .normal)
         buttonDisappear.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
         buttonDisappearanceAnimation(button: buttonDisappear)
+    }
+    private func swapToLayout(layout : Layout, images : [UIImage]) {
+        swapLayout(layout: layout)
+        if layout == .layout3  || layout == .layout1{
+            let layoutButtons = [pickPhotoLeftTopButton,pickPhotoLeftBottomButton,pickPhotoRightBottomButton]
+            fillGrids(layoutButtons: layoutButtons)
+        }else if layout == .layout2 {
+            let layoutButtons = [pickPhotoLeftTopButton,pickPhotoRightTopButton,pickPhotoLeftBottomButton]
+            fillGrids(layoutButtons: layoutButtons)
+        }
+    }
+    private func fillGrids(layoutButtons : [UIButton?]) {
+        var indexButton = 0
+        for image in images {
+            layoutButtons[indexButton]?.contentMode = .scaleAspectFill
+            layoutButtons[indexButton]?.setImage(image, for: .normal)
+            indexButton += 1
+        }
+    }
+    private func swapLayout(layout : Layout) {
+        if layout == .layout1  {
+            swapButton(buttonDisappear: pickPhotoRightTopButton, buttonAppears: pickPhotoRightBottomButton)
+        }else if layout == .layout2 {
+            swapButton(buttonDisappear: pickPhotoRightBottomButton, buttonAppears: pickPhotoRightTopButton)
+        }else if layout == .layout3 {
+            if imageSave != nil {
+                pickPhotoRightTopButton.setImage(imageSave, for: .normal)
+            }else{
+                pickPhotoRightTopButton.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
+            }
+        }
+    }
+    private func recupImage(layout : Layout) -> [UIImage] {
+        var images : [UIImage] = []
+        if layout == .layout2 {
+            images.append(pickPhotoLeftTopButton.currentImage!)
+            images.append(pickPhotoLeftBottomButton.currentImage!)
+            images.append(pickPhotoRightTopButton.currentImage!)
+            return images
+        }
+        else if layout == .layout1 || layout == .layout3  {
+            images.append(pickPhotoLeftTopButton.currentImage!)
+            images.append(pickPhotoLeftBottomButton.currentImage!)
+            images.append(pickPhotoRightBottomButton.currentImage!)
+            if layout == .layout3 {
+                imageSave = pickPhotoRightTopButton.currentImage
+            }
+            return images
+        }
+        return images
     }
 }
