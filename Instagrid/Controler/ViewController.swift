@@ -23,11 +23,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak private var swipeLeftToShareLabel: UILabel!
     @IBOutlet weak private var shareButton: UIButton!
     private var imageViewButton: UIButton!
-    private enum Layout {
-        case layout1
-        case layout2
-        case layout3
-    }
+    
     private var images : [UIImage] = []
     private var layout : Layout = .layout2 {
         willSet{
