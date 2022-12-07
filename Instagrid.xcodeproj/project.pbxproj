@@ -15,12 +15,10 @@
 		8B67994725AF4B6000B20C53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67994625AF4B6000B20C53 /* ViewController.swift */; };
 		8B67994A25AF4B6000B20C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994825AF4B6000B20C53 /* Main.storyboard */; };
 		8B67994C25AF4B6500B20C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994B25AF4B6500B20C53 /* Assets.xcassets */; };
-		8B67994F25AF4B6500B20C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */; };
 		CF46C6BF293F166800185645 /* MyGridsSwitUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6BE293F166800185645 /* MyGridsSwitUIApp.swift */; };
 		CF46C6C1293F166800185645 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6C0293F166800185645 /* ContentView.swift */; };
 		CF46C6C3293F166A00185645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF46C6C2293F166A00185645 /* Assets.xcassets */; };
 		CF46C6C6293F166A00185645 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF46C6C5293F166A00185645 /* Preview Assets.xcassets */; };
-		CF46C6CA293F16A400185645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */; };
 		CF46C6D2293F18CD00185645 /* MainGridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D1293F18CD00185645 /* MainGridsView.swift */; };
 		CF46C6D5293F194A00185645 /* LayoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D4293F194A00185645 /* LayoutButtonView.swift */; };
 		CF46C6D8293F19D600185645 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D7293F19D600185645 /* Layout.swift */; };
@@ -29,6 +27,7 @@
 		CF46C6DF293F266C00185645 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6DE293F266C00185645 /* ImagePicker.swift */; };
 		CF46C6E1293F2DB000185645 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6E0293F2DB000185645 /* ColorExtension.swift */; };
 		CF46C6E3293F300A00185645 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6E2293F300A00185645 /* GridsView.swift */; };
+		CF67D0C52940EC3D00F76389 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67D0C42940EC3D00F76389 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		8B67994625AF4B6000B20C53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B67994925AF4B6000B20C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B67994B25AF4B6500B20C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B67994E25AF4B6500B20C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B67995025AF4B6500B20C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF46C6BC293F166800185645 /* MyGridsSwitUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGridsSwitUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF46C6BE293F166800185645 /* MyGridsSwitUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGridsSwitUIApp.swift; sourceTree = "<group>"; };
@@ -55,6 +53,7 @@
 		CF46C6DE293F266C00185645 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CF46C6E0293F2DB000185645 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		CF46C6E2293F300A00185645 /* GridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridsView.swift; sourceTree = "<group>"; };
+		CF67D0C42940EC3D00F76389 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +77,8 @@
 		8B55F21125B6EE56008EB080 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */,
 				8B67994825AF4B6000B20C53 /* Main.storyboard */,
+				CF67D0C42940EC3D00F76389 /* Launch Screen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,10 +277,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B67994F25AF4B6500B20C53 /* LaunchScreen.storyboard in Resources */,
 				8B67994C25AF4B6500B20C53 /* Assets.xcassets in Resources */,
 				8B5C04E625DE0D8900D5427A /* ThirstySoftRegular.otf in Resources */,
 				8B5C04E025DE074300D5427A /* Delm-Medium.otf in Resources */,
+				CF67D0C52940EC3D00F76389 /* Launch Screen.storyboard in Resources */,
 				8B67994A25AF4B6000B20C53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF46C6CA293F16A400185645 /* LaunchScreen.storyboard in Resources */,
 				CF46C6C6293F166A00185645 /* Preview Assets.xcassets in Resources */,
 				CF46C6C3293F166A00185645 /* Assets.xcassets in Resources */,
 			);
@@ -336,14 +334,6 @@
 				8B67994925AF4B6000B20C53 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B67994E25AF4B6500B20C53 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -534,6 +524,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MyGrids;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -567,6 +558,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MyGrids;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

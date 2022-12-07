@@ -85,7 +85,7 @@
                                         </variation>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.015775226060000001" green="0.39592924709999999" blue="0.60368543860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1686274707" green="0.38823530080000002" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="0CF-OM-k6n"/>
                                     <constraint firstAttribute="width" secondItem="XrM-pD-fuT" secondAttribute="height" multiplier="1:1" id="23D-YL-SbH"/>
@@ -292,7 +292,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.80358225110000003" green="0.94066160919999997" blue="0.99945396180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.4352940917" green="0.75294119120000003" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="XrM-pD-fuT" firstAttribute="leading" secondItem="8Bp-zi-Zz0" secondAttribute="trailing" constant="1" id="0ow-de-I97">
                                 <variation key="heightClass=compact-widthClass=regular" constant="48"/>
