@@ -15,25 +15,56 @@
 		8B67994725AF4B6000B20C53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67994625AF4B6000B20C53 /* ViewController.swift */; };
 		8B67994A25AF4B6000B20C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994825AF4B6000B20C53 /* Main.storyboard */; };
 		8B67994C25AF4B6500B20C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994B25AF4B6500B20C53 /* Assets.xcassets */; };
-		8B67994F25AF4B6500B20C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */; };
+		CF46C6BF293F166800185645 /* MyGridsSwitUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6BE293F166800185645 /* MyGridsSwitUIApp.swift */; };
+		CF46C6C1293F166800185645 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6C0293F166800185645 /* ContentView.swift */; };
+		CF46C6C3293F166A00185645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF46C6C2293F166A00185645 /* Assets.xcassets */; };
+		CF46C6C6293F166A00185645 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF46C6C5293F166A00185645 /* Preview Assets.xcassets */; };
+		CF46C6D2293F18CD00185645 /* MainGridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D1293F18CD00185645 /* MainGridsView.swift */; };
+		CF46C6D5293F194A00185645 /* LayoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D4293F194A00185645 /* LayoutButtonView.swift */; };
+		CF46C6D8293F19D600185645 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D7293F19D600185645 /* Layout.swift */; };
+		CF46C6D9293F19E200185645 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6D7293F19D600185645 /* Layout.swift */; };
+		CF46C6DD293F1EB400185645 /* GridsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6DC293F1EB400185645 /* GridsButtonView.swift */; };
+		CF46C6DF293F266C00185645 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6DE293F266C00185645 /* ImagePicker.swift */; };
+		CF46C6E1293F2DB000185645 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6E0293F2DB000185645 /* ColorExtension.swift */; };
+		CF46C6E3293F300A00185645 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF46C6E2293F300A00185645 /* GridsView.swift */; };
+		CF67D0C52940EC3D00F76389 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67D0C42940EC3D00F76389 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B5C04DF25DE074300D5427A /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		8B5C04E525DE0D8900D5427A /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		8B5C04EA25DEBF7700D5427A /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
-		8B67993F25AF4B6000B20C53 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B67993F25AF4B6000B20C53 /* MyGrids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGrids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B67994225AF4B6000B20C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B67994425AF4B6000B20C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8B67994625AF4B6000B20C53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B67994925AF4B6000B20C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B67994B25AF4B6500B20C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B67994E25AF4B6500B20C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B67995025AF4B6500B20C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF46C6BC293F166800185645 /* MyGridsSwitUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGridsSwitUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF46C6BE293F166800185645 /* MyGridsSwitUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGridsSwitUIApp.swift; sourceTree = "<group>"; };
+		CF46C6C0293F166800185645 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF46C6C2293F166A00185645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF46C6C5293F166A00185645 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF46C6D1293F18CD00185645 /* MainGridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGridsView.swift; sourceTree = "<group>"; };
+		CF46C6D4293F194A00185645 /* LayoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutButtonView.swift; sourceTree = "<group>"; };
+		CF46C6D7293F19D600185645 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		CF46C6DC293F1EB400185645 /* GridsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridsButtonView.swift; sourceTree = "<group>"; };
+		CF46C6DE293F266C00185645 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CF46C6E0293F2DB000185645 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		CF46C6E2293F300A00185645 /* GridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridsView.swift; sourceTree = "<group>"; };
+		CF67D0C42940EC3D00F76389 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8B67993C25AF4B6000B20C53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF46C6B9293F166800185645 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,8 +77,8 @@
 		8B55F21125B6EE56008EB080 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */,
 				8B67994825AF4B6000B20C53 /* Main.storyboard */,
+				CF67D0C42940EC3D00F76389 /* Launch Screen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -77,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				8B67994125AF4B6000B20C53 /* Instagrid */,
+				CF46C6BD293F166800185645 /* MyGridsSwitUI */,
 				8B67994025AF4B6000B20C53 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,7 +116,8 @@
 		8B67994025AF4B6000B20C53 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B67993F25AF4B6000B20C53 /* Instagrid.app */,
+				8B67993F25AF4B6000B20C53 /* MyGrids.app */,
+				CF46C6BC293F166800185645 /* MyGridsSwitUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,19 +126,85 @@
 			isa = PBXGroup;
 			children = (
 				8B55F21525B6EE95008EB080 /* Supporting Files */,
-				8B55F21325B6EE77008EB080 /* Controler */,
 				8B55F21125B6EE56008EB080 /* View */,
+				8B55F21325B6EE77008EB080 /* Controler */,
 				8B67995025AF4B6500B20C53 /* Info.plist */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
 		};
+		CF46C6BD293F166800185645 /* MyGridsSwitUI */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C6D0293F186200185645 /* Supporting files */,
+				CF46C6CF293F185500185645 /* Model */,
+				CF46C6CE293F184A00185645 /* View */,
+				CF46C6CD293F183C00185645 /* ViewModel */,
+				CF46C6C4293F166A00185645 /* Preview Content */,
+			);
+			path = MyGridsSwitUI;
+			sourceTree = "<group>";
+		};
+		CF46C6C4293F166A00185645 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C6C5293F166A00185645 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF46C6CD293F183C00185645 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF46C6CE293F184A00185645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C6C0293F166800185645 /* ContentView.swift */,
+				CF46C6D1293F18CD00185645 /* MainGridsView.swift */,
+				CF46C6D3293F192400185645 /* UtilsView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF46C6CF293F185500185645 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C6D7293F19D600185645 /* Layout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF46C6D0293F186200185645 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C6BE293F166800185645 /* MyGridsSwitUIApp.swift */,
+				CF46C6C2293F166A00185645 /* Assets.xcassets */,
+				CF46C6E0293F2DB000185645 /* ColorExtension.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		CF46C6D3293F192400185645 /* UtilsView */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C6D4293F194A00185645 /* LayoutButtonView.swift */,
+				CF46C6DC293F1EB400185645 /* GridsButtonView.swift */,
+				CF46C6DE293F266C00185645 /* ImagePicker.swift */,
+				CF46C6E2293F300A00185645 /* GridsView.swift */,
+			);
+			path = UtilsView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B67993E25AF4B6000B20C53 /* Instagrid */ = {
+		8B67993E25AF4B6000B20C53 /* MyGrids */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B67995325AF4B6500B20C53 /* Build configuration list for PBXNativeTarget "Instagrid" */;
+			buildConfigurationList = 8B67995325AF4B6500B20C53 /* Build configuration list for PBXNativeTarget "MyGrids" */;
 			buildPhases = (
 				8B67993B25AF4B6000B20C53 /* Sources */,
 				8B67993C25AF4B6000B20C53 /* Frameworks */,
@@ -115,9 +214,26 @@
 			);
 			dependencies = (
 			);
-			name = Instagrid;
+			name = MyGrids;
 			productName = Instagrid;
-			productReference = 8B67993F25AF4B6000B20C53 /* Instagrid.app */;
+			productReference = 8B67993F25AF4B6000B20C53 /* MyGrids.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF46C6BB293F166800185645 /* MyGridsSwitUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF46C6C9293F166A00185645 /* Build configuration list for PBXNativeTarget "MyGridsSwitUI" */;
+			buildPhases = (
+				CF46C6B8293F166800185645 /* Sources */,
+				CF46C6B9293F166800185645 /* Frameworks */,
+				CF46C6BA293F166800185645 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyGridsSwitUI;
+			productName = MyGridsSwitUI;
+			productReference = CF46C6BC293F166800185645 /* MyGridsSwitUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,11 +242,14 @@
 		8B67993725AF4B5F00B20C53 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1250;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					8B67993E25AF4B6000B20C53 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					CF46C6BB293F166800185645 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -147,7 +266,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B67993E25AF4B6000B20C53 /* Instagrid */,
+				8B67993E25AF4B6000B20C53 /* MyGrids */,
+				CF46C6BB293F166800185645 /* MyGridsSwitUI */,
 			);
 		};
 /* End PBXProject section */
@@ -157,11 +277,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B67994F25AF4B6500B20C53 /* LaunchScreen.storyboard in Resources */,
 				8B67994C25AF4B6500B20C53 /* Assets.xcassets in Resources */,
 				8B5C04E625DE0D8900D5427A /* ThirstySoftRegular.otf in Resources */,
 				8B5C04E025DE074300D5427A /* Delm-Medium.otf in Resources */,
+				CF67D0C52940EC3D00F76389 /* Launch Screen.storyboard in Resources */,
 				8B67994A25AF4B6000B20C53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF46C6BA293F166800185645 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF46C6C6293F166A00185645 /* Preview Assets.xcassets in Resources */,
+				CF46C6C3293F166A00185645 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +303,25 @@
 			files = (
 				8B5C04EB25DEBF7800D5427A /* LabelExtension.swift in Sources */,
 				8B67994725AF4B6000B20C53 /* ViewController.swift in Sources */,
+				CF46C6D9293F19E200185645 /* Layout.swift in Sources */,
 				8B67994325AF4B6000B20C53 /* AppDelegate.swift in Sources */,
 				8B67994525AF4B6000B20C53 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF46C6B8293F166800185645 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF46C6C1293F166800185645 /* ContentView.swift in Sources */,
+				CF46C6D2293F18CD00185645 /* MainGridsView.swift in Sources */,
+				CF46C6DD293F1EB400185645 /* GridsButtonView.swift in Sources */,
+				CF46C6E1293F2DB000185645 /* ColorExtension.swift in Sources */,
+				CF46C6DF293F266C00185645 /* ImagePicker.swift in Sources */,
+				CF46C6D8293F19D600185645 /* Layout.swift in Sources */,
+				CF46C6E3293F300A00185645 /* GridsView.swift in Sources */,
+				CF46C6BF293F166800185645 /* MyGridsSwitUIApp.swift in Sources */,
+				CF46C6D5293F194A00185645 /* LayoutButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +334,6 @@
 				8B67994925AF4B6000B20C53 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8B67994D25AF4B6500B20C53 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B67994E25AF4B6500B20C53 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -252,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -307,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -324,16 +462,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = P9TXP3LGTK;
 				INFOPLIST_FILE = Instagrid/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.daguin-sebastien.Instagrid";
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.daguin-sebastien-daguin.mygrids";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -346,18 +490,92 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = P9TXP3LGTK;
 				INFOPLIST_FILE = Instagrid/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.daguin-sebastien.Instagrid";
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.daguin-sebastien-daguin.mygrids";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CF46C6C7293F166A00185645 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyGridsSwitUI/Preview Content\"";
+				DEVELOPMENT_TEAM = P9TXP3LGTK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGrids;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.daguin-jsebastien.MyGridsSwitUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF46C6C8293F166A00185645 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyGridsSwitUI/Preview Content\"";
+				DEVELOPMENT_TEAM = P9TXP3LGTK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGrids;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.daguin-jsebastien.MyGridsSwitUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -373,11 +591,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B67995325AF4B6500B20C53 /* Build configuration list for PBXNativeTarget "Instagrid" */ = {
+		8B67995325AF4B6500B20C53 /* Build configuration list for PBXNativeTarget "MyGrids" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B67995425AF4B6500B20C53 /* Debug */,
 				8B67995525AF4B6500B20C53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF46C6C9293F166A00185645 /* Build configuration list for PBXNativeTarget "MyGridsSwitUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF46C6C7293F166A00185645 /* Debug */,
+				CF46C6C8293F166A00185645 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

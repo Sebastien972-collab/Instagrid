@@ -21,13 +21,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak private var instagridLabel: UILabel!
     @IBOutlet weak private var arrowLeftView: UIImageView!
     @IBOutlet weak private var swipeLeftToShareLabel: UILabel!
+    @IBOutlet weak private var shareButton: UIButton!
     private var imageViewButton: UIButton!
-    private enum Layout {
-        case layout1
-        case layout2
-        case layout3
-    }
-    var images : [UIImage] = []
+    
+    private var images : [UIImage] = []
     private var layout : Layout = .layout2 {
         willSet{
             images = recupImage(layout: layout)
@@ -54,8 +51,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     //MARK:- Buttons Photo
-    @IBAction func tappedAddPhoto(_ sender: UIButton) {
+    @IBAction private func tappedAddPhoto(_ sender: UIButton) {
         addPhoto(button: sender)
+    }
+    @IBAction private func tappedShareButton(_ sender: Any) {
+        shareImageField()
     }
     //MARK:- Transform Image
     ///This function moves the image field
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private func shareImageField() {
         let renderer = UIGraphicsImageRenderer(size: imageField.bounds.size)
         let image = renderer.image { ctx in
-            imageField.drawHierarchy(in: imageField.bounds, afterScreenUpdates: false)
+            imageField.drawHierarchy(in: imageField.bounds, afterScreenUpdates: true)
         }
         let vc = UIActivityViewController(activityItems: [image], applicationActivities: nil )
         vc.popoverPresentationController?.sourceView = self.view
@@ -132,6 +132,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK:- Prepare user interface
     ///This function is used to display the start screen and add swipe recognition
     private func prepareUserInterface() {
+        shareButton.setTitle("", for: .normal)
         tappedLayout(sender: buttonLayout2, newLayout: .layout2)
         let swipeUp = UISwipeGestureRecognizer()
         swipeUp.direction = .up
@@ -187,6 +188,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         layout = newLayout
         resetButtonLayout()
         selectedButton(button: sender)
+        
+        
     }
     private func resetButtonLayout() {
         buttonLayout1.isSelected = false
